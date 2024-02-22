@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full px-10 py-3 flex justify-between bg-zinc-800 text-white items-center">
+        <a href="/feed" class="text-lg">PinVerse</a>
+        <div class="flex gap-10">
+            <a href="/profile">Profile</a>
+            <a href="/feed">Feed</a>
+            <a href="/logout" class="px-2 bg-red-700 text-white rounded-full">Logout</a>
+        </div>
+    </div>
+
+    <div class="w-fill min-h-screen bg-zinc-800 px-10 text-white">
+        <hr class="opacity-15">
+        <div class="w-full h-full px-10 py-5 text-white mt-5 mb-5">
+        
+        <div class=" sm:w-4 lg:w-50 xl:w-80 h-96 bg-gray-500">
+            <% posts.forEach(function(elem){ %>
+                <div class="card w-32">
+                    <div class="w-32 h-40 rounded-lg w-full overflow-hidden bg-zinc-700">
+                        <img class="w-full h-full object-cover" src="/images/uploads/<%= elem.image%>" alt="">
+                    </div>
+                    <h5 class="mt-2 text-sm"><%= elem.title %></h5>
+                    <h6 class="text-xs font-semibold opacity-40"> @<%= elem.user.username %></h6>
+                </div>
+            <% }) %>
+        </div>
+        
+    </div>
+    </div>
+
+</body>
+</html>

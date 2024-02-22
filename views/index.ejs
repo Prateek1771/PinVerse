@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Seaweed+Script&display=swap" rel="stylesheet">
+  <style>
+
+    #loader{
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      transition: all ease 0.5s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #loader h1{
+      font-size: 5vw;
+      font:bold;
+      color: transparent;
+      background: linear-gradient(to right, orange, orangered);
+
+      font-family: "Kanit", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+
+      -webkit-background-clip: text;
+      position: absolute;
+      opacity: 0;
+      animation-name: load;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-timing-function: linear;
+    }
+
+    #loader #pin{
+      font-family: "Seaweed Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font: bold;
+      font-size: 10vw;
+    }
+
+    #loader h1:nth-child(2){
+      animation-delay: 2s;
+    }
+
+    #loader h1:nth-child(3){
+      animation-delay: 3s;
+    }
+
+    #loader h1:nth-child(4){
+      animation-delay: 4s;
+    }
+
+    @keyframes load {
+      0%{
+        opacity: 0;
+      }
+      10%{
+        opacity: 1;
+      }
+      90%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+      }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<div id="loader">
+  <h1>Creative</h1>
+  <h1>Inspirational</h1>
+  <h1>Discover</h1>
+  <h1 id="pin">PinVerse</h1>
+</div>
+
+<div class="w-full h-screen bg-[url(https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center flex justify-center items-center">
+  <div class="w-full h-screen flex justify-center items-center">
+  <div class="sm:w-32 sm:h-95 xl:w-80 xl:h-95 m-10 bg-white px-10 py-5 rounded-[30px]">
+    <h1 class="text-2xl tracking-tighter leading-none 	text-transform: capitalize; text-center font-semibold text-zinc-700">Welcome To PinVerse.</h1>
+    <form action="/login" method="post">
+      <input class="border-2 rounded-md block w-full px-3 py-2 mt-5" type="text" name="username" placeholder="Username">
+      <input class="border-2 rounded-md block w-full px-3 py-2 mt-2" type="password" name="password" placeholder="Password">
+      <a class="mt-2 text-xs font-semibold text-zinc-500 inline-block" href="#">Forgot Password ?</a>
+      <input class="border-2 block w-full px-3 py-2 bg-red-600 text-white rounded-full mt-3" type="submit" value="Login">
+      <p class="text-xs font-semibold text-zinc-700 mt-2 w-2/3 text-center mx-auto">By continuing, you agree to enter discover, curate, and share your creative passions with our visually captivating platform</p>
+    </form>
+    <a class="inline-block mt-2 text-sm font-bold text-zinc-700 text-center w-full" href="/register">Don't have an account</a>
+  </div>
+</div>
+</div>
+
+<script src="/public/javascripts/script.js"></script>
+
+<script>
+
+function loaderAnimation() {
+  var loader = document.querySelector("#loader")
+  setTimeout(function () {
+    loader.style.top = "-100%"
+  }, 4800)
+}
+
+loaderAnimation();
+
+</script>
+</body>
+</html>
